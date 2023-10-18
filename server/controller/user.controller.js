@@ -7,7 +7,7 @@ export const home = (req, res) => {
 export const createUser = async (req, res) => {
   try {
     // Extracting name and email from body
-    const { name, email, address } = req.body;
+    const { name, email, age } = req.body;
 
     if (!name || !email) {
       throw new Error("Name and Email are required");
@@ -22,7 +22,7 @@ export const createUser = async (req, res) => {
     const user = await User.create({
       name,
       email,
-      address
+      age
     });
 
     res.status(200).json({
@@ -42,6 +42,23 @@ export const createUser = async (req, res) => {
 export const getUsers = async (req, res) => {
   try {
     const users = await User.find();
+
+    res.status(200).json({
+      success: true,
+      users,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export const getUsersById = async (req, res) => {
+  try {
+    const users = await User.findById(req.params.id);
 
     res.status(200).json({
       success: true,

@@ -6,7 +6,8 @@ import {
   getUsers,
   deleteUser,
   editUser,
-  home
+  home,
+  getUsersById
 } from "../controller/user.controller.js";
 
 
@@ -14,6 +15,7 @@ import {
 router.get("/", home)
 router.post("/createUser", createUser);
 router.get("/getUsers", getUsers);
+router.get("/getUsersById/:id", getUsersById)
 router.put("/editUser/:id", editUser);
 router.delete("/deleteUser/:id", deleteUser);
 
