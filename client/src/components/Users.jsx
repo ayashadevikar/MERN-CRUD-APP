@@ -33,7 +33,7 @@ const Users = () => {
     return (
         <> 
             <div className=" flex flex-col justify-center items-center">
-                <Link to="/create">Add +</Link>
+                <Link to="/create" className="bg-green-600">Add +</Link>
                 <table className="w-[30%] text-center">
                     <thead >
                         <tr >
