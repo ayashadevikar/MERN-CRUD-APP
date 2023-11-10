@@ -10,11 +10,11 @@ dotenv.config();
 dbConnection();
 
 app.use(cors(
-    {
-        origin: ["https://mern-crud-app-client.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
+    // {
+    //     origin: ["https://mern-crud-app-client.vercel.app"],
+    //     methods: ["POST", "GET"],
+    //     credentials: true
+    // }
 ));
 app.use(express.json());
 
